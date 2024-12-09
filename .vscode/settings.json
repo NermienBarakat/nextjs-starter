@@ -1,4 +1,12 @@
 {
-	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "biomejs.biome"
+	"workbench.colorTheme": "Night Owl", // Set your chosen theme
+	"editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+	"editor.fontLigatures": true, // Enables font ligatures for better readability
+	"editor.cursorSmoothCaretAnimation": true, // Smooth cursor movement
+	"editor.lineHeight": 22, // Adjust line height for readability
+	"editor.wordWrap": "on", // Wrap long lines for better focus
+	"workbench.iconTheme": "vscode-icons", // Optional: A clean icon theme
+	"workbench.startupEditor": "newUntitledFile", // Start with a fresh editor
+	"editor.minimap.enabled": false, // Disable minimap to reduce visual clutter
+	"terminal.integrated.fontSize": 14 // Comfortable terminal font size
 }

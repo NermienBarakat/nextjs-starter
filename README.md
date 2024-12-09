@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Next.js Starter Project
 
-First, run the development server:
+## Project Integrations
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Frameworks and Core Libraries
+- **Next.js 15**: Modern React framework for building server-rendered applications with powerful features like Turbopack for faster builds.
+- **React 19**: Core library for building UI components.
+- **TypeScript 5**: Type-safe JavaScript for better development experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Code Quality Tools
+- **Biome**:
+  - Used for linting and formatting.
+  - Commands:
+    - `pnpm run lint`: Runs Biome linting to check for code quality issues.
+    - `pnpm run format`: Formats the code automatically.
+    - `pnpm run lint-and-format`: Combines both linting and formatting.
+- **Commitlint**:
+  - Ensures commit messages follow the **Conventional Commit** format.
+  - Integrated via Lefthook for automated checks during commits.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Automation and Git Hooks
+- **Lefthook**:
+  - Manages Git hooks for automating pre-commit and commit-message tasks.
+  - Automates the following:
+    - **Linting**: Runs `pnpm run lint` before committing.
+    - **Formatting**: Runs `pnpm run format` on staged files before committing.
+    - **Commit Message Validation**: Uses Commitlint to ensure commit messages follow conventions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### TypeScript Type Definitions
+- **@types/node**: Type definitions for Node.js.
+- **@types/react**: Type definitions for React.
+- **@types/react-dom**: Type definitions for React DOM.
 
-## Learn More
+### Package Manager
+- **pnpm**: Fast and efficient package manager for managing dependencies.
 
-To learn more about Next.js, take a look at the following resources:
+### Prepare Script
+- **`prepare` Script**:
+  - Ensures Lefthook is installed automatically when running `pnpm install`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Example Workflow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Install Dependencies**:
+   ```bash
+   pnpm install
+   ```
 
-## Deploy on Vercel
+2. **Development**:
+   - Start the development server:
+     ```bash
+     pnpm run dev
+     ```
+   - Automatically lint and format code:
+     - During commits (Lefthook).
+     - Manually with:
+       ```bash
+       pnpm run lint
+       pnpm run format
+       ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Committing Changes**:
+   - Ensure commit messages follow conventions.
+   - Lefthook runs linting, formatting, and Commitlint validation automatically.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Deployment**:
+   - Use **Vercel CLI** for seamless deployment:
+     ```bash
+     vercel
+     ```
+
+## Integration Checklist
+
+| **Tool**                | **Purpose**                                       |
+|-------------------------|---------------------------------------------------|
+| **Next.js**             | Core framework for the application.               |
+| **React**               | UI components.                                    |
+| **TypeScript**          | Static type checking.                             |
+| **Biome**               | Linting and formatting.                           |
+| **Commitlint**          | Commit message validation.                        |
+| **Lefthook**            | Automates Git hooks for linting and formatting.   |
+| **pnpm**                | Efficient package manager.                        |
+| **Type Definitions**    | Ensures type safety for Node.js, React, and DOM.  |
